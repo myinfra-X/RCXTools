@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RCX Tools - หน้าหลัก</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f4f8;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #1a365d;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        p.subtitle {
+            font-size: 1.2rem;
+            color: #718096;
+        }
+        /* ระบบ Grid สำหรับจัดวางปุ่มใหญ่ๆ 4 ปุ่ม */
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            max-width: 800px;
+            width: 100%;
+        }
+        /* สไตล์ปุ่มขนาดใหญ่ */
+        .menu-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 180px;
+            background: #ffffff;
+            color: #2d3748;
+            text-decoration: none;
+            border-radius: 16px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            transition: all 0.25s ease-in-out;
+            border: 2px solid transparent;
+            padding: 20px;
+            text-align: center;
+        }
+        .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+        /* เอฟเฟกต์เวลาเอาเมาส์ไปชี้ (Hover) แต่ละปุ่ม */
+        .card-appointment:hover {
+            border-color: #3182ce;
+            color: #3182ce;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(49, 130, 206, 0.15);
+        }
+        .card-result:hover {
+            border-color: #38a169;
+            color: #38a169;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(56, 161, 105, 0.15);
+        }
+        .card-stats:hover {
+            border-color: #805ad5;
+            color: #805ad5;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(128, 90, 213, 0.15);
+        }
+        /* ปุ่มที่ 4 แบบว่างไว้ก่อน */
+        .card-empty {
+            background-color: #edf2f7;
+            border: 2px dashed #cbd5e0;
+            color: #a0aec0;
+            cursor: not-allowed;
+        }
+        /* รองรับการแสดงผลบนมือถือ ให้ปรับเป็นแถวละ 1 ปุ่มอัตโนมัติ */
+        @media (max-width: 600px) {
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+            h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>RCX Tools</h1>
+        <p class="subtitle">ระบบบริหารจัดการและเครื่องมือสนับสนุนงานรังสีวินิจฉัย</p>
+    </header>
+    
+    <div class="menu-grid">
+        <a href="appointment.html" class="menu-card card-appointment">
+            <div class="icon">📅</div>
+            <div class="title">พิมพ์ใบนัดตรวจ</div>
+        </a>
+
+        <a href="cleaner.html" class="menu-card card-result">
+            <div class="icon">📝</div>
+            <div class="title">ลงผลอ่าน</div>
+        </a>
+
+        <a href="stats.html" class="menu-card card-stats">
+            <div class="icon">📊</div>
+            <div class="title">สถิติรายวัน</div>
+        </a>
+
+        <div class="menu-card card-empty">
+            <div class="icon">➕</div>
+            <div class="title">เตรียมพบกับโปรแกรมใหม่เร็วๆ นี้</div>
+        </div>
+    </div>
+
+</body>
+</html>
